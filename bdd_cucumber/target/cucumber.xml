@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="83.638" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-09-08T09:47:58.669713Z">
+<testcase classname="Booking.com – Happy path flows" name="Search hyderabad hotels and apply filters with sorting" time="49.843">
+<system-out><![CDATA[
+Given I open Booking.com....................................................passed
+When I search for destination "hyderabad"...................................passed
+And I select check-in date "22 September 2025"..............................passed
+And I select check-out date "23 September 2025".............................passed
+And I submit the search.....................................................passed
+Then the results page for "hyderabad" is displayed..........................passed
+When I apply an available filter (e.g. "Free WiFi" or "Star rating")........passed
+And I open sort options.....................................................passed
+And I choose "Property rating (low to high)"................................passed
+Then the results list is updated accordingly................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Booking.com – Happy path flows" name="Open a specific hotel and choose room quantity" time="19.768">
+<system-out><![CDATA[
+Given I am on a hotel details page for "Eminent Suites and Apartments" with dates "22 September 2025" to "23 September 2025".passed
+When I click "Reserve"......................................................passed
+And I select "1" room in the room selection dropdown........................passed
+Then the booking step for room selection is updated for 1 room..............passed
+]]></system-out>
+</testcase>
+<testcase classname="Booking.com – Happy path flows" name="Enter guest details and proceed with booking" time="12.734">
+<system-out><![CDATA[
+Given I am on the booking details page for my selected room and dates.......passed
+When I enter first name "saikiran"..........................................passed
+And I enter last name "PMV".................................................passed
+And I enter email "saikiran@gmail.com"......................................passed
+And I enter phone "9556965987"..............................................passed
+And I continue to the next step.............................................passed
+And I submit the booking....................................................passed
+Then I am taken to the next confirmation or payment step successfully.......passed
+]]></system-out>
+</testcase>
+</testsuite>
